@@ -1,0 +1,39 @@
+From 7e108d001c46322e911f8aedf00f25ec1f843dd0 Mon Sep 17 00:00:00 2001
+From: Alvaro Guzman <alvaro.guzman@owasys.com>
+Date: Thu, 4 Aug 2022 10:31:06 +0200
+Subject: [PATCH 3/4] Changed bootcmd so it loads the kernel from the rootfs
+ /boot
+
+---
+ include/configs/imx8mp_owa5x.h | 15 +++++++--------
+ 1 file changed, 7 insertions(+), 8 deletions(-)
+
+diff --git a/include/configs/imx8mp_owa5x.h b/include/configs/imx8mp_owa5x.h
+index d905a9b8..c792a30d 100644
+--- a/include/configs/imx8mp_owa5x.h
++++ b/include/configs/imx8mp_owa5x.h
+@@ -101,14 +101,13 @@
+          "fi; " \
+       "fi;" \
+       "run nandboot;\0" \
+-	"bootcmd=run BOOT_CMD_BALENA\0" \
+-	"BOOT_CMD_BALENA=setenv resin_kernel_load_addr ${kernel_addr_r};" \
+-	"run resin_set_kernel_root;" \
+-	"run findfdt;" \
+-	"setenv bootargs ${resin_kernel_root} rootfstype=ext4 rootwait console=$console;" \
+-	"fatload ${resin_dev_type} ${resin_dev_index}:${resin_boot_part} ${resin_kernel_load_addr} zimage;" \
+-	"fatload ${resin_dev_type} ${resin_dev_index}:${resin_boot_part} ${fdt_addr_r} ${fdtfile};" \
+-	"bootz ${resin_kernel_load_addr} - ${fdt_addr_r}\0" \
+++	"bootcmd=run BOOT_CMD_BALENA\0" \
+++	"BOOT_CMD_BALENA=ext4load mmc 1:2 ${loadaddr} boot/Image; fatload mmc 1:1 ${fdt_addr} imx8mp-owa5x.dtb; booti ${loadaddr} - ${fdt_addr};\0" \
+++	"run resin_set_kernel_root;" \
+++	"setenv bootargs ${resin_kernel_root} rootfstype=ext4 rootwait console=$console;" \
+++	"fatload ${resin_dev_type} ${resin_dev_index}:${resin_boot_part} ${resin_kernel_load_addr} zimage;" \
+++	"fatload ${resin_dev_type} ${resin_dev_index}:${resin_boot_part} ${fdt_addr_r} ${fdtfile};" \
+++	"bootz ${resin_kernel_load_addr} - ${fdt_addr_r}\0" \
+    "update_owa5x=" \
+       "if test ${updatefw} != 1; then " \
+          "echo Nothing to update; " \
+-- 
+2.25.1
+

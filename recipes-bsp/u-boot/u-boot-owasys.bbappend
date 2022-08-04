@@ -9,4 +9,11 @@ FILESEXTRAPATHS_prepend := "${THISDIR}/files:"
 SRC_URI_remove = " file://resin-specific-env-integration-kconfig.patch"
 SRC_URI_append = " file://0001-Include-resin-env.patch"
 
-SRC_URI_append_owa5x = " file://0002-Set-balena-bootcmd.patch"
+SRC_URI_append_owa5x = " file://0002-Set-balena-bootcmd.patch \
+                         file://0003-Changed-bootcmd-so-it-loads-the-kernel-from-the-root.patch \
+                         file://0004-Removed-grammar-error.patch \
+                         file://0005-Removed-strange-symbol-introduced-when-creating-patc.patch \
+                         "
+
+do_configure[nostamp] = "1"
+do_compile[nostamp] = "1"

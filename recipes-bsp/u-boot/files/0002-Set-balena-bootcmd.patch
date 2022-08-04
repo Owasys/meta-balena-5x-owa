@@ -1,7 +1,7 @@
 From da84b63c912e0645d01133a8a2b5b8c7e0d155e1 Mon Sep 17 00:00:00 2001
 From: Alvaro Guzman <alvaro.guzman@owasys.com>
 Date: Fri, 29 Jul 2022 12:40:21 +0200
-Subject: [PATCH 2/2] Set balena bootcmd
+Subject: [PATCH 2/4] Set balena bootcmd
 
 ---
  include/configs/imx8mp_owa5x.h | 9 ++++++++-

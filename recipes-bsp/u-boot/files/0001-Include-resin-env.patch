@@ -1,7 +1,7 @@
 From 661b368802c748095d03fef87bed15442b15110a Mon Sep 17 00:00:00 2001
 From: Alvaro Guzman <alvaro.guzman@owasys.com>
 Date: Fri, 29 Jul 2022 12:31:46 +0200
-Subject: [PATCH] Include resin env
+Subject: [PATCH 1/4] Include resin env
 
 ---
  include/env_default.h | 3 +++
