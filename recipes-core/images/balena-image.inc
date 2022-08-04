@@ -1,6 +1,8 @@
 IMAGE_FSTYPES_append = " balenaos-img"
 
-BALENA_IMAGE_BOOTLOADER_owa5x = "u-boot-owasys"
+DEPENDS += " imx-boot-owasys "
+
+BALENA_IMAGE_BOOTLOADER_owa5x = " u-boot-owasys "
 
 BALENA_BOOT_PARTITION_FILES = " \
     imx8mp-owa5x.dtb:/imx8mp-owa5x.dtb \
