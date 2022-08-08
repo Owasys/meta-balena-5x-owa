@@ -13,6 +13,8 @@ SRC_URI_append_owa5x = " file://0002-Set-balena-bootcmd.patch \
                          file://0003-Changed-bootcmd-so-it-loads-the-kernel-from-the-root.patch \
                          file://0004-Removed-grammar-error.patch \
                          file://0005-Removed-strange-symbol-introduced-when-creating-patc.patch \
+                         file://0006-Modified-bootargs-to-manually-boot-balenaOS.patch \
+                         file://0007-Added-run-mmcargs-at-boot-command-so-needed-variable.patch \
                          "
 
 do_configure[nostamp] = "1"

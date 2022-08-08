@@ -1,0 +1,26 @@
+From 0765f90f2818e039d580fa39d33d2e1293c821f1 Mon Sep 17 00:00:00 2001
+From: Alvaro Guzman <alvaro.guzman@owasys.com>
+Date: Mon, 8 Aug 2022 11:43:34 +0200
+Subject: [PATCH 7/7] Added run mmcargs at boot command so needed variables as
+ console get their correct values
+
+---
+ include/configs/imx8mp_owa5x.h | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/include/configs/imx8mp_owa5x.h b/include/configs/imx8mp_owa5x.h
+index 4922140a..2c6f4e0e 100644
+--- a/include/configs/imx8mp_owa5x.h
++++ b/include/configs/imx8mp_owa5x.h
+@@ -102,7 +102,7 @@
+       "fi;" \
+       "run nandboot;\0" \
+ 	"bootcmd=run BOOT_CMD_BALENA\0" \
+-	"BOOT_CMD_BALENA=ext4load mmc 1:2 ${loadaddr} boot/Image; fatload mmc 1:1 ${fdt_addr} imx8mp-owa5x.dtb; booti ${loadaddr} - ${fdt_addr};\0" \
++	"BOOT_CMD_BALENA=run mmcargs; ext4load mmc 1:2 ${loadaddr} boot/Image; fatload mmc 1:1 ${fdt_addr} imx8mp-owa5x.dtb; booti ${loadaddr} - ${fdt_addr};\0" \
+ 	"run resin_set_kernel_root;" \
+ 	"setenv bootargs console=ttymxc0,115200 earlycon=ec_imx6q,0x30860000,115200 root=/dev/mmcblk1p2 rw rootfstype=ext4 rootwait=1;" \
+ 	"fatload ${resin_dev_type} ${resin_dev_index}:${resin_boot_part} ${resin_kernel_load_addr} zimage;" \
+-- 
+2.25.1
+
