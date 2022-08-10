@@ -7,14 +7,17 @@ FILESEXTRAPATHS_prepend := "${THISDIR}/files:"
 
 # resin-u-boot class patch is rebased
 SRC_URI_remove = " file://resin-specific-env-integration-kconfig.patch"
-SRC_URI_append = " file://0001-Include-resin-env.patch"
 
-SRC_URI_append_owa5x = " file://0002-Set-balena-bootcmd.patch \
-                         file://0003-Changed-bootcmd-so-it-loads-the-kernel-from-the-root.patch \
-                         file://0004-Removed-grammar-error.patch \
-                         file://0005-Removed-strange-symbol-introduced-when-creating-patc.patch \
-                         file://0006-Modified-bootargs-to-manually-boot-balenaOS.patch \
-                         file://0007-Added-run-mmcargs-at-boot-command-so-needed-variable.patch \
+SRC_URI_append_owa5x = "    file://0001-Added-defconfig-options-needed-for-Balena.patch \
+                            file://0002-Added-env_resin.h-to-the-env_defaults.h-and-changed-.patch \
+                            file://0003-Set-uboot-env-variables-to-load-the-kernel-in-gz-for.patch \
+                            file://0004-First-unzip-the-kernel.patch \
+                            file://0005-Fixed-booti-bug-command.patch \
+                            file://0006-bootargs-fixed.patch \
+                            file://0007-bootargs-fixed-2.patch \
+                            file://0008-Changed-maximum-decompressed-kernel-size-via-define-.patch \
+                            file://0009-Changed-env-sizes.patch \
+                            file://0010-Changed-env-sizes-again.patch \
                          "
 
 do_configure[nostamp] = "1"
