@@ -1,7 +1,7 @@
 From f9d1feafe31a95c08fd00678461a429d2f5e265b Mon Sep 17 00:00:00 2001
 From: Alvaro Guzman <alvaro.guzman@owasys.com>
 Date: Tue, 9 Aug 2022 17:14:43 +0200
-Subject: [PATCH 04/10] First unzip the kernel
+Subject: [PATCH 04/11] First unzip the kernel
 
 ---
  include/configs/imx8mp_owa5x.h | 4 +++-

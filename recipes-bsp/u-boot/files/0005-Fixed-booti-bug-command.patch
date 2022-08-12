@@ -1,7 +1,7 @@
 From 026bd0d94da4d658be5d465afa6a7cd9361eeaff Mon Sep 17 00:00:00 2001
 From: Alvaro Guzman <alvaro.guzman@owasys.com>
 Date: Wed, 10 Aug 2022 10:21:33 +0200
-Subject: [PATCH 05/10] Fixed booti bug command
+Subject: [PATCH 05/11] Fixed booti bug command
 
 ---
  include/configs/imx8mp_owa5x.h | 2 +-

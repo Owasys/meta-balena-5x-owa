@@ -1,7 +1,7 @@
 From e92fd3b9c760bd55c802e8306d5aa5ebfd45e3a6 Mon Sep 17 00:00:00 2001
 From: Alvaro Guzman <alvaro.guzman@owasys.com>
 Date: Wed, 10 Aug 2022 16:43:27 +0200
-Subject: [PATCH 10/10] Changed env sizes again
+Subject: [PATCH 10/11] Changed env sizes again
 
 ---
  configs/imx8mp_owa5x_defconfig | 4 ++--

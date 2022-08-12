@@ -1,7 +1,7 @@
 From e3de6981923c9e1455ced249a91f2da4eb74daf2 Mon Sep 17 00:00:00 2001
 From: Alvaro Guzman <alvaro.guzman@owasys.com>
 Date: Wed, 10 Aug 2022 10:41:31 +0200
-Subject: [PATCH 06/10] bootargs fixed
+Subject: [PATCH 06/11] bootargs fixed
 
 ---
  include/configs/imx8mp_owa5x.h | 2 +-

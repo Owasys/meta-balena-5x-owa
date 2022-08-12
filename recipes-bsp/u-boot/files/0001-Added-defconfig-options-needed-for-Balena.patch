@@ -1,7 +1,7 @@
 From 8c5bae88d00bb16fe628a75fc411c7bb1e893f27 Mon Sep 17 00:00:00 2001
 From: Alvaro Guzman <alvaro.guzman@owasys.com>
 Date: Tue, 9 Aug 2022 15:31:41 +0200
-Subject: [PATCH 01/10] Added defconfig options needed for Balena
+Subject: [PATCH 01/11] Added defconfig options needed for Balena
 
 ---
  configs/imx8mp_owa5x_defconfig | 8 +++++---

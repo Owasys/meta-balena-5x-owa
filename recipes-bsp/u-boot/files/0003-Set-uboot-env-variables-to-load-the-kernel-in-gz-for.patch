@@ -1,7 +1,7 @@
 From 1e7305e0c663334c61be0bb978842ef0f9076541 Mon Sep 17 00:00:00 2001
 From: Alvaro Guzman <alvaro.guzman@owasys.com>
 Date: Tue, 9 Aug 2022 16:09:40 +0200
-Subject: [PATCH 03/10] Set uboot env variables to load the kernel in gz format
+Subject: [PATCH 03/11] Set uboot env variables to load the kernel in gz format
  from the resin-boot partition
 
 ---

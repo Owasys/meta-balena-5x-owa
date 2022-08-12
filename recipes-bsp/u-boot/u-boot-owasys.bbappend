@@ -18,6 +18,7 @@ SRC_URI_append_owa5x = "    file://0001-Added-defconfig-options-needed-for-Balen
                             file://0008-Changed-maximum-decompressed-kernel-size-via-define-.patch \
                             file://0009-Changed-env-sizes.patch \
                             file://0010-Changed-env-sizes-again.patch \
+                            file://0011-Changed-terminal-prompt-uboot-local-version-and-mmc-.patch \
                          "
 
 do_configure[nostamp] = "1"

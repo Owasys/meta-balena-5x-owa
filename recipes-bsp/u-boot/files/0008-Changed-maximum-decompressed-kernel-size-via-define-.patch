@@ -1,7 +1,7 @@
 From 88760697b3ac2a97526b3d331ca444eadbfe200c Mon Sep 17 00:00:00 2001
 From: Alvaro Guzman <alvaro.guzman@owasys.com>
 Date: Wed, 10 Aug 2022 11:33:50 +0200
-Subject: [PATCH 08/10] Changed maximum decompressed kernel size via define in
+Subject: [PATCH 08/11] Changed maximum decompressed kernel size via define in
  imx8mp_owa5x.h
 
 ---
