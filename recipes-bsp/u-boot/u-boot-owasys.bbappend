@@ -3,23 +3,25 @@ UBOOT_KCONFIG_SUPPORT="1"
 BALENA_UBOOT_DEVICE_TYPES="usb mmc"
 inherit resin-u-boot
 
-FILESEXTRAPATHS_prepend := "${THISDIR}/files:"
+FILESEXTRAPATHS:prepend := "${THISDIR}/files:"
 
 # resin-u-boot class patch is rebased
-SRC_URI_remove = " file://resin-specific-env-integration-kconfig.patch"
+SRC_URI:remove = " file://resin-specific-env-integration-kconfig.patch"
 
-SRC_URI_append_owa5x = "    file://0001-Added-defconfig-options-needed-for-Balena.patch \
-                            file://0002-Added-env_resin.h-to-the-env_defaults.h-and-changed-.patch \
-                            file://0003-Set-uboot-env-variables-to-load-the-kernel-in-gz-for.patch \
-                            file://0004-First-unzip-the-kernel.patch \
-                            file://0005-Fixed-booti-bug-command.patch \
-                            file://0006-bootargs-fixed.patch \
-                            file://0007-bootargs-fixed-2.patch \
-                            file://0008-Changed-maximum-decompressed-kernel-size-via-define-.patch \
-                            file://0009-Changed-env-sizes.patch \
-                            file://0010-Changed-env-sizes-again.patch \
-                            file://0011-Changed-terminal-prompt-uboot-local-version-and-mmc-.patch \
-                         "
+SRC_URI:append:owa5x = " file://0001-Integrate-with-Balena-uboot-environment-patch.patch \
+                         file://0002-Added-configs-to-load-uboot-from-NAND.patch \
+                         file://0003-Added-little-changes-in-defconfig.patch \
+                         file://0004-Balena-u-boot-forced-to-believe-it-boots-from-eMMC.patch \
+                         file://0005-ENV-can-be-on-NAND-and-in-NOWHERE.patch \
+                         file://0006-Fixed-defconfig.patch \
+"
+SRC_URI += "file://fw_env.config"
 
 do_configure[nostamp] = "1"
 do_compile[nostamp] = "1"
+
+do_install:append () {
+  install -d ${D}${sysconfdir}
+  install -m 0644 ${WORKDIR}/fw_env.config ${D}${sysconfdir}/fw_env.config
+}
+ 
